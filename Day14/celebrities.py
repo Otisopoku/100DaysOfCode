@@ -1,0 +1,22 @@
+celebrities =[
+  {"name": "Cristiano Ronaldo",     "follower_count": 663000000, "description": "Footballer",                   "country": "Portugal"},
+  {"name": "Lionel Messi",          "follower_count": 506000000, "description": "Footballer",                   "country": "Argentina"},
+  {"name": "Selena Gomez",          "follower_count": 417000000, "description": "Singer and Actress",           "country": "United States"},
+  {"name": "Kylie Jenner",          "follower_count": 393000000, "description": "Media Personality, Businesswoman", "country": "United States"},
+  {"name": "Dwayne Johnson",        "follower_count": 392000000, "description": "Actor and Wrestler",           "country": "United States"},
+  {"name": "Ariana Grande",         "follower_count": 374000000, "description": "Singer and Actress",           "country": "United States"},
+  {"name": "Kim Kardashian",        "follower_count": 356000000, "description": "Media Personality, Businesswoman", "country": "United States"},
+  {"name": "Beyoncé",               "follower_count": 310000000, "description": "Singer, Actress, Businesswoman", "country": "United States"},
+  {"name": "Khloé Kardashian",      "follower_count": 302000000, "description": "Media Personality, Businesswoman", "country": "United States"},
+  {"name": "Justin Bieber",         "follower_count": 294000000, "description": "Singer",                        "country": "Canada"},
+  {"name": "Kendall Jenner",        "follower_count": 286000000, "description": "Media Personality",             "country": "United States"},
+  {"name": "Taylor Swift",          "follower_count": 282000000, "description": "Singer",                        "country": "United States"},
+  {"name": "National Geographic",   "follower_count": 278000000, "description": "Magazine",                      "country": "United States"},
+  {"name": "Virat Kohli",           "follower_count": 273000000, "description": "Cricketer",                     "country": "India"},
+  {"name": "Jennifer Lopez",        "follower_count": 248000000, "description": "Singer and Actress",            "country": "United States"},
+  {"name": "Neymar Jr.",            "follower_count": 231000000, "description": "Footballer",                    "country": "Brazil"},
+  {"name": "Nicki Minaj",           "follower_count": 224000000, "description": "Singer",                        "country": "United States"},
+  {"name": "Kourtney Kardashian",   "follower_count": 218000000, "description": "Media Personality",             "country": "United States"},
+  {"name": "Miley Cyrus",           "follower_count": 212000000, "description": "Singer and Actress",            "country": "United States"},
+  {"name": "Katy Perry",            "follower_count": 203000000, "description": "Singer",                        "country": "United States"}
+]
