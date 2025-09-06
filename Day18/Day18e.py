@@ -40,13 +40,13 @@ def rgb_to_hex(rgb):
 converted_to_hex = [rgb_to_hex(rgb) for rgb in colors_to_use]
 
 t.teleport(-150, -80) # starting position
-
+t.hideturtle()
 def draw_pattern():
     for i in range(10):
         t.dot(10, random.choice(converted_to_hex))
         t.penup()
         t.forward(30)
-        t.pendown()
+        
 
 y_increment = 30
 for i in range(10):
