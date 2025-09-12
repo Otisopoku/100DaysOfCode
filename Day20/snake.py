@@ -2,6 +2,7 @@ from turtle import Turtle
 
 SNAKE_POSITIONS = [(0,0), (-20, 0), (-40, 0)]
 MOVE_DISTANCE = 20
+HEADING_POSITIONS = {"north": 90, "south": 270, "east": 0, "west": 180}
 
 class Snake:
 
@@ -23,3 +24,19 @@ class Snake:
             self.snake_segments[i].penup()
             self.snake_segments[i].goto(new_x, new_y)
         self.snake_segments[0].forward(MOVE_DISTANCE)
+
+    def up(self):
+        if self.snake_segments[0].heading() != 270:
+            self.snake_segments[0].setheading(90)
+
+    def down(self):
+        if self.snake_segments[0].heading() != 90:
+            self.snake_segments[0].setheading(270)
+
+    def left(self):
+        if self.snake_segments[0].heading() != 0:
+            self.snake_segments[0].setheading(180)
+
+    def right(self):
+        if self.snake_segments[0].heading() != 180:
+            self.snake_segments[0].setheading(0)
