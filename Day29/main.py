@@ -40,9 +40,9 @@ def generate_password():
 
 def save():
     
-    website = website_entry.get()
-    email = email_entry.get()
-    password = password_entry.get()
+    website = website_entry.get().lower()
+    email = email_entry.get().lower()
+    password = password_entry.get().lower()
     
     new_credential = {
         website: {
@@ -63,14 +63,14 @@ def save():
                 with open("data.json", "r") as file:
                     # read old data
                     data = json.load(file)
-                    # updata old data
-                    data.update(new_credential)
+                    
             except FileNotFoundError:
                 with open("data.json", "w") as file:
                 # save updated data
                     json.dump(new_credential, file, indent=4)
             else:
-                
+                # updata old data
+                data.update(new_credential)
                 with open("data.json", "w") as file:
                     # save updated data
                     json.dump(data, file, indent=4)
@@ -78,6 +78,21 @@ def save():
                 website_entry.delete(0, END)
                 password_entry.delete(0, END)
                 
+def search_password():
+    website_name = website_entry.get()
+    if website_name:
+        try:
+            with open("data.json", "r") as file:
+                data: dict = json.load(file)
+                res = data.get(website_name.strip().lower())
+                if res:
+                    print(res.get("password"))
+                    messagebox.showinfo(title="Account info", message=f"Website: {website_name}\nPassword: {res.get("password")}")
+                else:
+                    messagebox.showerror(title="Not found", message=f"There is no credentials stored for the website '{website_entry}'")          
+                
+        except FileNotFoundError:
+            print("File not found")
             
 
 # ---------------------------- UI SETUP ------------------------------- #
@@ -103,7 +118,7 @@ password_label.grid(row=3, column=0)
 #Entries
 
 website_entry = Entry(width=45)
-website_entry.grid(row=1, column=1, columnspan=2)
+website_entry.grid(row=1, column=1)
 website_entry.focus()
 email_entry = Entry(width=45)
 email_entry.grid(row=2, column=1, columnspan=2)
@@ -115,6 +130,8 @@ password_entry.grid(row=3, column=1)
 
 generate_pass_button = Button(text="Generate Password", command=generate_password)
 generate_pass_button.grid(row=3, column=2)
+search_button = Button(text="Search", command=search_password)
+search_button.grid(row=1, column=2 )
 add_btn = Button(text="Add", width=40, command=save)
 add_btn.grid(row=4, column=1, columnspan=2)
 

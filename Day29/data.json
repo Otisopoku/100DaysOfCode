@@ -1,10 +1,10 @@
 {
-    "Otis.com": {
-        "email": "otisopoku30@gmail.com",
-        "password": "%4JH&(p*FsJ2wS"
-    },
-    "Amazon.com": {
-        "email": "otisopoku30@gmail.com",
-        "password": "5(lqTCrZWA9%ZM("
-    }
+  "otis.com": {
+    "email": "otisopoku30@gmail.com",
+    "password": "%4JH&(p*FsJ2wS"
+  },
+  "amazon.com": {
+    "email": "otisopoku30@gmail.com",
+    "password": "5(lqTCrZWA9%ZM("
+  }
 }
