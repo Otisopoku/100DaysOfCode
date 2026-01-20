@@ -6,6 +6,14 @@ import random as r
 
 BACKGROUND_COLOR = "#B1DDC6"
 
+try:
+    data_frame = pd.read_csv(filepath_or_buffer="data/french_words.csv", skiprows=0)
+except FileNotFoundError as e:
+    print(f"Failed to read 'words_to_learn.csv: Error {e}\n Opening french_words.csv")
+    data_frame = pd.read_csv(filepath_or_buffer="data/french_words.csv", skiprows=0)
+else:
+    ata_dict = data_frame.to_dict(orient="records")
+    
 data_frame = pd.read_csv(filepath_or_buffer="data/french_words.csv", skiprows=0)
 data_dict = data_frame.to_dict(orient="records")
 
