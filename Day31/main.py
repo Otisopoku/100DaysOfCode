@@ -8,6 +8,7 @@ BACKGROUND_COLOR = "#B1DDC6"
 
 data_frame = pd.read_csv(filepath_or_buffer="data/french_words.csv", skiprows=0)
 data_dict = data_frame.to_dict(orient="records")
+
 word_pair = r.choice(data_dict)
 flip_timer = None # to handle and cancel timer in situations where the user clicks on the correct or wrong button before the timer ends so a new
 # 5 seconds timer will be initiated on the next card flip
@@ -27,6 +28,18 @@ def show_new_card():
     canvas.itemconfig(main_canvas, image=front_card_img)
     
     flip_timer= window.after(5000, flip_card, word_pair)
+    
+
+def handle_right_button_click():
+    word_pair_to_remove = word_pair
+    data_dict.remove(word_pair_to_remove)
+    show_new_card()
+    
+def save_to_learn_words():
+    df = pd.DataFrame(data_dict)
+    df.to_csv("words_to_learn.csv", index=False)
+    
+    
 
     
 def flip_card(word_pair):
@@ -59,10 +72,11 @@ wrong_button = Button(image=wrong_image, highlightthickness=0, command=show_new_
 wrong_button.grid(row=1, column=0)
 
 right_image = PhotoImage(file="images/right.png")
-right_button = Button(image=right_image, highlightthickness=0, command=show_new_card)
+right_button = Button(image=right_image, highlightthickness=0, command=handle_right_button_click)
 right_button.grid(row=1, column=1)
 
 
 show_new_card()
 
 window.mainloop()
+save_to_learn_words()
